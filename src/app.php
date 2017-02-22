@@ -8,11 +8,16 @@ use Silex\Provider\HttpFragmentServiceProvider;
 use Symfony\Component\HttpFoundation\Request;
 
 
+
 $app = new Application();
 $app->register(new ServiceControllerServiceProvider());
 $app->register(new AssetServiceProvider());
 $app->register(new TwigServiceProvider());
 $app->register(new HttpFragmentServiceProvider());
+$app->register(new Silex\Provider\LocaleServiceProvider());
+// $app->register(new Silex\Provider\TranslationServiceProvider(), array(
+// 	'translator.messages' => array(),
+// ));
 
 /*Implémentation de doctrine*/
 $app->register(new Silex\Provider\DoctrineServiceProvider());

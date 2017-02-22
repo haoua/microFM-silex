@@ -2,6 +2,7 @@
 
 use Silex\Provider\MonologServiceProvider;
 use Silex\Provider\WebProfilerServiceProvider;
+use Silex\Provider\FormServiceProvider;
 
 // include the prod configuration
 require __DIR__.'/prod.php';
@@ -30,3 +31,9 @@ $app['db.options'] = array(
 
 // enable the debug mode
 $app['debug'] = true;
+
+$app->register(new FormServiceProvider());
+
+$app->register(new Silex\Provider\TranslationServiceProvider(), array(
+    'translator.domains' => array(),
+));
