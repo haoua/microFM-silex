@@ -1,9 +1,13 @@
 {% extends "layout.html.twig" %}
 
 {% block content %}
-    <form action="#" method="post">
-	    {{ form_widget(form) }}
-
-	    <input type="submit" name="submit" />
-	</form>
+	<div id="home">
+		<h1><span class="glyphicon glyphicon-list" aria-hidden="true"></span> To Do List</h1>
+	    <form action="#" method="post">
+	    	 <div class="form-group">
+		    	{{ form_widget(form) }}
+		    </div>
+		    <input type="submit" name="submit" class="btn btn-default" />
+		</form>
+	</div>
 {% endblock %}

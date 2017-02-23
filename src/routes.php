@@ -2,6 +2,9 @@
 use Symfony\Component\HttpFoundation\Request;
 use SilexApi\User;
 use SilexApi\UserDao;
+
+use SilexApi\Task;
+use SilexApi\TaskDao;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 
 // Get all users

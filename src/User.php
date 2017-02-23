@@ -7,17 +7,22 @@ class User
     /**
      * @var integer
      */
-    private $id;
+    public $id;
 
     /**
      * @var string
      */
-    private $firstname;
+    public $username;
 
     /**
      * @var string
      */
-    private $lastname;
+    private $email;
+
+    /**
+     * @var string
+     */
+    private $password;
 
 
     /**
@@ -37,8 +42,43 @@ class User
     /**
      * @return string
      */
-    public function getFirstname() {
-        return $this->firstname;
+    public function getUsername() {
+        return $this->username;
+    }
+
+    /**
+     * @param string $username
+     */
+    public function setUsername( $username ) {
+        $this->username = $username;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEmail() {
+        return $this->email;
+    }
+
+    /**
+     * @param string $email
+     */
+    public function setEmail( $email ) {
+        $this->email = $email;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPasswor() {
+        return $this->password;
+    }
+
+    /**
+     * @param string $password
+     */
+    public function setPassword( $password ) {
+        $this->password = $password;
     }
 
     /**
@@ -46,19 +86,5 @@ class User
      */
     public function setFirstname( $firstname ) {
         $this->firstname = $firstname;
-    }
-
-    /**
-     * @return string
-     */
-    public function getLastname() {
-        return $this->lastname;
-    }
-
-    /**
-     * @param string $lastname
-     */
-    public function setLastname( $lastname ) {
-        $this->lastname = $lastname;
     }
 }

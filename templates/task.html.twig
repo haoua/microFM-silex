@@ -1,0 +1,48 @@
+{% extends "layout.html.twig" %}
+
+{% block nav %}
+	<header id="main">
+		<div class="container">
+			<nav>
+				<ul>
+					<li><a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Déconnexion</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+{% endblock %}
+
+{% block user %}
+	<!-- 
+<div id="user">
+	<div class="container">
+		Bonjour	{{username}}
+	</div>
+</div>
+-->
+{% endblock %}
+
+{% block content %}
+    <h1>Bonjour {{ username }},</h1>
+    <p>Vous avez {{ number }} choses à faire</p>
+    <ul id="list_task">
+	    {% for task in tasks %}
+		    <li><span>{{ task.name|e }}</span>
+		    	<form action="/tasks/delete/{{task.id}}" method="post">
+		    	    <input type="hidden" id="_method" name="_method" value="DELETE" />
+			    	<input type="submit" name="submit" class="btn btn-danger" value="Effacer" />
+		    	</form>
+		    </li>
+		{% endfor %}
+    </ul>
+
+	<br>
+
+    <form action="/tasks/create" method="post" id="addask">
+    	 <div class="form-group">
+	    	{{ form_widget(form) }}
+	    </div>
+	    <input type="submit" name="submit" class="btn btn-primary" value="Ajouter" />
+	</form>
+
+{% endblock %}

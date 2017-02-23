@@ -32,15 +32,16 @@ class UserDao
         return $entities;
     }
 
-    public function find($id)
+    public function find($username)
     {
-        $sql = "SELECT * FROM user WHERE id=?";
-        $row = $this->getDb()->fetchAssoc($sql, array($id));
+        $sql = "SELECT * FROM user WHERE username=?";
+        $row = $this->getDb()->fetchAssoc($sql, array($username));
 
         if ($row) {
             return $this->buildDomainObjects($row);
         } else {
-            throw new \Exception("No user matching id ".$id);
+//           throw new \Exception("No user matching id ".$username);
+           return 0;
         }
     }
 
@@ -70,9 +71,20 @@ class UserDao
     {
         $user = new User();
         $user->setId($row['id']);
-        $user->setFirstname($row['firstname']);
-        $user->setLastname($row['lastname']);
+        $user->setEmail($row['email']);
+        $user->setUsername($row['username']);
+        $user->setPassword($row['password']);
 
         return $user;
+    }
+
+    public function login($id, $username, $password)
+    {
+        $sql = "SELECT * FROM user WHERE id=? AND username=? AND password=?";
+        $row = $this->getDb()->fetchAssoc($sql, array($id, $username,$password));
+        if ($row) {
+            return 1;
+        }
+        
     }
 }

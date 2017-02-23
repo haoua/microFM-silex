@@ -1,0 +1,57 @@
+body, html{
+	margin: 0;
+	padding: 0;
+}
+
+#main{
+	background: #EEE;
+}
+
+#user{
+	text-align: right;
+}
+
+form{
+	display: inline-block;
+}
+
+h1 span{
+	font-size: 23px;
+}
+
+#home h1{
+	font-family: 'Oswald', sans-serif;
+	color: #2980b9;
+	text-align: center;
+	background: #ecf0f1;
+	padding: 10px 0;
+	margin-top: 0;
+}
+
+#home{
+	width: 500px;
+	margin: 50px auto;
+	border: 1px solid #ecf0f1;
+	padding-bottom: 15px;
+}
+
+#home form{
+	padding: 0 15px;
+}
+
+#home label{
+	margin-right: 10px;
+}
+
+#list_task li span{
+	display: inline-block;
+	width: 30%;
+}
+
+#list_task li{
+	margin-bottom: 10px;
+}
+
+#addask label{
+	margin-right: 15px;
+}
